@@ -1,79 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Blog Title</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: #35424a;
-            color: #ffffff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav {
-            margin: 20px 0;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #35424a;
-        }
-        section {
-            margin: 20px;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Notes</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  .search { margin-bottom: 20px; }
+  .book-list { display: flex; flex-wrap: wrap; gap: 15px; }
+  .book-item { 
+    border: 1px solid #ddd; 
+    padding: 10px; 
+    width: 150px;  /* wider card */
+    cursor: pointer; 
+    text-align: center; 
+    border-radius: 5px; 
+    transition: box-shadow 0.3s; 
+  }
+  .book-item:hover { box-shadow: 0 0 10px #888; }
+  .book-icon { 
+    height: 140px;    /* taller book icon area */
+    margin-bottom: 10px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+  }
+  .book-icon img {
+    max-width: 100%;
+    max-height: 130px;  /* bigger image */
+    object-fit: contain;
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+    background: #f7f7f7;
+  }
+  .book-title { font-weight: bold; margin: 10px 0 5px 0; }
+  .book-genre, .book-rating { font-size: 12px; color: #555; }
+  .book-status { font-size: 12px; color: #007BFF; }
+</style>
 </head>
 <body>
+<h1>Book Notes</h1>
 
-<header>
-    <h1>Western Art</h1>
-</header>
+<div class="search">
+  <input type="text" id="search-title" placeholder="Search by title..." oninput="filterBooks()" />
+  <select id="search-genre" onchange="filterBooks()">
+    <option value="">All Genres</option>
+    <option value="Fiction">Fiction</option>
+    <option value="Biography">Biography</option>
+    <option value="Philosophy">Philosophy</option>
+  </select>
+  <select id="search-rating" onchange="filterBooks()">
+    <option value="">All Ratings</option>
+    <option value="1">1+</option>
+    <option value="2">2+</option>
+    <option value="3">3+</option>
+    <option value="4">4+</option>
+    <option value="5">5+</option>
+  </select>
+  <select id="search-status" onchange="filterBooks()">
+    <option value="">All Status</option>
+    <option value="Reading">Reading</option>
+    <option value="Read">Read</option>
+    <option value="Paused">Paused</option>
+    <option value="DNC">DNC</option>
+  </select>
+  <select id="search-year" onchange="filterBooks()">
+    <option value="">All Years</option>
+    <option value="2025">2025</option>
+  </select>
+</div>
 
-<nav>
-    <a href="#section1">Watson and the shark</a>
-    <a href="#section2">Section 2</a>
-    <a href="#section3">Section 3</a>
-</nav>
 
-<section id="section1">
-    <h2>Watson and the shark</h2>
-    <img src="watson_and_the_shark.jpg" alt="Description of image 1">
-    <p>The painting depicts a dramatic scene in which a young man named Brook Watson is attacked by a shark while swimming in the Caribbean Sea. The event is based on a real incident that occurred in 1749 when Watson, who was a 14-year-old cabin boy at the time, was bitten by a shark while swimming in Havana Harbor.</p>
-</section>
+<div class="book-list" id="book-list">
+  <div class="book-item" onclick="location.href='01karmayogi.md'" data-title="karmayogi" data-genre="Biography" data-status="Reading" data-year="2025" data-rating="1">
+    <div class="book-icon">
+      <img src="https://i.imgur.com/z3PhAs5.jpeg" alt="Karmayogi" />
+    </div>
+    <div class="book-title">Karmayogi</div>
+    <div class="book-genre">Biography</div>
+    <div class="book-status">Reading</div>
+  </div>
+</div>
 
-<section id="section2">
-    <h2>Watson from imgur</h2>
-    <img src="https://i.imgur.com/IOlDOcv.jpeg" alt="Description of image 2">
-    <p>Description of image 2 goes here. You can provide details about the image and its significance.</p>
-</section>
 
-<section id="section3">
-    <h2>3 Dying Bull</h2>
-    <img src="https://www.dropbox.com/scl/fi/oif7p8od340a71y157glw/3-dying-bull.avif?rlkey=7a081m4h4n8lhn1zl9y2pfzcw&st=cddc6199&dl=0" alt="Salvator Mundi by Leonardo da Vinci">
-    <p>Description of image 3 goes here. You can provide details about the image and its significance.</p>
-</section>
+<!-- 
+  <div class="book-item" onclick="location.href='book4.md'" data-title="atomic habits" data-genre="Self-help" data-status="Paused" data-year="2025"data-rating="4">
+    <div class="book-icon">
+      <img src="https://i.imgur.com/SuW2ZlC.jpg" alt="Atomic Habits Cover" />
+    </div>
+    <div class="book-title">Atomic Habits</div>
+    <div class="book-genre">Self-help</div>
+    <div class="book-rating">☆☆☆☆⭐</div>
+  </div>
+-->
+<script>
+function filterBooks() {
+  const titleFilter = document.getElementById('search-title').value.toLowerCase();
+  const genreFilter = document.getElementById('search-genre').value;
+  const ratingFilter = parseFloat(document.getElementById('search-rating').value) || 0;
+  const statusFilter = document.getElementById('search-status').value;
+  const yearFilter = document.getElementById('search-year').value;
 
-<section id="section4">
-    <h2>3 postimg</h2>
-    <a href='https://postimg.cc/TLrD66LV' target='_blank'><img src='https://i.postimg.cc/HxN4bWTh/watson-and-the-shark.jpg' border='0' alt='watson-and-the-shark'/></a>
-    <p>Description of image 3 goes here. You can provide details about the image and its significance.</p>
-</section>
+  const books = document.querySelectorAll('.book-item');
+  books.forEach(book => {
+    const title = book.getAttribute('data-title');
+    const genre = book.getAttribute('data-genre');
+    const rating = parseFloat(book.getAttribute('data-rating'));
+    const status = book.getAttribute('data-status');
+    const year = book.getAttribute('data-year');
 
+    const matchesTitle = title.includes(titleFilter);
+    const matchesGenre = genreFilter === '' || genre === genreFilter;
+    const matchesRating = rating >= ratingFilter;
+    const matchesStatus = statusFilter === '' || status === statusFilter;
+    const matchesYear = yearFilter === '' || year === yearFilter;
+
+    if (matchesTitle && matchesGenre && matchesRating && matchesStatus && matchesYear) {
+      book.style.display = 'block';
+    } else {
+      book.style.display = 'none';
+    }
+  });
+}
+</script>
 </body>
 </html>
