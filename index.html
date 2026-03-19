@@ -48,7 +48,7 @@
     <option value="">All Genres</option>
     <option value="Fiction">Fiction</option>
     <option value="Biography">Biography</option>
-    <option value="Philosophy">Philosophy</option>
+    <option value="Travel">Travel</option>
   </select>
   <select id="search-rating" onchange="filterBooks()">
     <option value="">All Ratings</option>
@@ -74,7 +74,7 @@
 
 
 <div class="book-list" id="book-list">
-  <div class="book-item" onclick="location.href='01karmayogi.md'" data-title="karmayogi" data-genre="Biography" data-status="Read" data-year="2025" data-rating="1">
+  <div class="book-item" onclick="location.href='01_karmayogi.md'" data-title="karmayogi" data-genre="Biography" data-status="Read" data-year="2025" data-rating="1">
     <div class="book-icon">
       <img src="https://i.imgur.com/z3PhAs5.jpeg" alt="Karmayogi" />
     </div>
@@ -84,7 +84,7 @@
     <div class="book-rating">⭐☆☆☆☆</div>
   </div>
 
-  <div class="book-item" onclick="location.href='02gurkha.md'" data-title="gurkha" data-genre="Biography" data-status="Read" data-year="2026" data-rating="3">
+  <div class="book-item" onclick="location.href='02_gurkha.md'" data-title="gurkha" data-genre="Biography" data-status="Read" data-year="2026" data-rating="3">
     <div class="book-icon">
       <img src="https://i.imgur.com/K8cW49p.jpeg" alt="Gurkha" />
     </div>
@@ -93,19 +93,30 @@
     <div class="book-status">Read</div>
     <div class="book-rating">⭐⭐⭐☆☆</div>
   </div>
+
+  <div class="book-item" onclick="location.href='03_ilakkattrapayani.md'" data-title="ilakkattra payani" data-genre="Travel" data-status="Read" data-year="2026" data-rating="4">
+    <div class="book-icon">
+      <img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1697968926i/165265890.jpg" alt="ilakkattra payani" />
+    </div>
+    <div class="book-title">இலக்கற்ற பயணி</div>
+    <div class="book-genre">Travel</div>
+    <div class="book-status">Read</div>
+    <div class="book-rating">⭐⭐⭐⭐☆</div>
+  </div>
+
+  <div class="book-item" onclick="location.href='04_sellathapanam.md'" data-title="Sellatha Panam" data-genre="Fiction" data-status="Read" data-year="2026" data-rating="4">
+    <div class="book-icon">
+      <img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1515780867i/37920093.jpg" alt="Sellatha Panam" />
+    </div>
+    <div class="book-title">செல்லாத பணம்</div>
+    <div class="book-genre">Fiction</div>
+    <div class="book-status">Read</div>
+    <div class="book-rating">⭐⭐⭐⭐☆</div>
+  </div>
+
   
 </div>
 
-<!-- 
-  <div class="book-item" onclick="location.href='book4.md'" data-title="atomic habits" data-genre="Self-help" data-status="Paused" data-year="2025"data-rating="4">
-    <div class="book-icon">
-      <img src="https://i.imgur.com/SuW2ZlC.jpg" alt="Atomic Habits Cover" />
-    </div>
-    <div class="book-title">Atomic Habits</div>
-    <div class="book-genre">Self-help</div>
-    <div class="book-rating">☆☆☆☆⭐</div>
-  </div>
--->
 <script>
 function filterBooks() {
   const titleFilter = document.getElementById('search-title').value.toLowerCase();
