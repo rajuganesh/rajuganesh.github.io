@@ -1,7 +1,3 @@
----
-layout: default
-title: "Selladha Panam - Imayam"
----
 # *Selladha Panam* by Imayam
 
 ![Selladha Panam cover](https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1515780867i/37920093.jpg)
